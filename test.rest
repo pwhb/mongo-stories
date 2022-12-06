@@ -1,0 +1,38 @@
+@BASE_URL=http://[::1]:5173
+
+###
+GET {{BASE_URL}}/api/authors
+
+
+###
+GET {{BASE_URL}}/api/authors/638e7f5ac61f8b6b0dabee63
+
+###
+POST {{BASE_URL}}/api/authors
+content-type: application/json
+
+{
+    "firstName": "Phone",
+    "lastName": "Waiyam Hein",
+    "penName": "broccoli",
+    "intro": "songs and stawberries",
+    "bio": "art, love, maths and freedom",
+    "slug": "",
+    "image": "",
+    "thumbnail": ""
+}
+
+###
+PUT {{BASE_URL}}/api/authors/638e7f5ac61f8b6b0dabee63
+content-type: application/json
+
+{
+    "firstName": "Phone",
+    "lastName": "Waiyam Hein",
+    "penName": "broccoli",
+    "intro": "songs and stawberries",
+    "bio": "art, love, maths and freedom",
+    "slug": "broccoli",
+    "image": "",
+    "thumbnail": ""
+}
