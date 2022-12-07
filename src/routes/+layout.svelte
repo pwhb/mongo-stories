@@ -1,10 +1,12 @@
 <script>
-	import { connectDB } from '$lib/db';
-	import { onMount } from 'svelte';
+	import Footer from '$lib/components/footer.svelte';
 	import '../app.css';
-	onMount(async () => {
-		await connectDB;
-	});
+
+
+	export let data;
+	console.log('data', data);
 </script>
 
 <slot />
+
+<Footer />

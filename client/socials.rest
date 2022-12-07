@@ -13,17 +13,22 @@ POST {{BASE_URL}}/api/socials
 content-type: application/json
 
 {
-    "url": "",
-    "icon": "",
-    "name": "",
+    "placement": 2,
+    "url": "https://lichess.org/@/broccolipwh",
+    "icon": "https://www.svgrepo.com/show/330838/lichess.svg",
+    "name": "lichess"
 }
+
+
+
 
 ###
 PUT {{BASE_URL}}/api/socials/{{SOCIAL_ID}}
 content-type: application/json
 
 {
-    "url": "",
-    "icon": "",
-    "name": "",
+    "placement": "0",
+    "url": "https://goodreads.com/pwhb",
+    "icon": "https://www.svgrepo.com/show/349384/goodreads.svg",
+    "name": "goodreads"
 }

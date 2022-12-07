@@ -3,6 +3,8 @@ import { Schema, model } from "mongoose";
 const storySchema: Schema = new Schema({
     title: { type: String },
     slug: { type: String },
+    coverImage: { type: String },
+    pdfUrl: { type: String },
     song: {
         type: Schema.Types.ObjectId,
         ref: "Song"
