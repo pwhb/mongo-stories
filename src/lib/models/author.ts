@@ -1,26 +1,37 @@
-type ShinobiParams = {
-    name: string, team: string, picture: string, village: string
+import { slugify } from "$lib/utils/slugify"
+
+type AuthorType = {
+    firstName: string
+    lastName: string
+    penName: string
+    intro?: string
+    bio?: string
+    image?: string
+    thumbnail?: string
 }
 
-export function Shinobi({ name, team, picture, village }: ShinobiParams) {
-    this.name = name
-    this.slug = name.toLowerCase().replace(/\s/g, "-")
-    this.team = team
-    this.picture = picture
-    this.village = village
+class Author {
+    firstName: string
+    lastName: string
+    penName: string
+    intro?: string
+    bio?: string
+    slug: string
+    image?: string
+    thumbnail?: string
+
+    constructor({ firstName, lastName, penName, intro, bio, image, thumbnail }: AuthorType) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.penName = penName;
+        this.intro = intro;
+        this.bio = bio;
+        const fullName = firstName + " " + lastName
+        this.slug = slugify(fullName)
+        this.image = image
+        this.thumbnail = thumbnail 
+
+    }
 }
 
-// const authorSchema: Schema = new Schema({
-//     firstName: { type: String },
-//     lastName: { type: String },
-//     penName: { type: String },
-//     intro: { type: String },
-//     bio: { type: String },
-//     slug: { type: String },
-//     image: { type: String },
-//     thumbnail: { type: String }
-// })
-
-// const Author = model("Author", authorSchema)
-
-// export default Author
+export default Author
