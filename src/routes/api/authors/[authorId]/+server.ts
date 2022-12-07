@@ -25,7 +25,7 @@ export const PUT: RequestHandler = async ({ request, params }) => {
         return json({ author });
     } catch (e) {
         console.log(e)
-        throw error(400, 'min and max must be numbers, and min must be less than max');
+        throw error(400, "Error");
     }
 
 }

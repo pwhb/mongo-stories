@@ -1,11 +1,13 @@
 @BASE_URL=http://[::1]:5173
 
+@AUTHOR_ID=638e7f5ac61f8b6b0dabee63
+
 ###
 GET {{BASE_URL}}/api/authors
 
 
 ###
-GET {{BASE_URL}}/api/authors/638e7f5ac61f8b6b0dabee63
+GET {{BASE_URL}}/api/authors/{{AUTHOR_ID}}
 
 ###
 POST {{BASE_URL}}/api/authors
@@ -23,7 +25,7 @@ content-type: application/json
 }
 
 ###
-PUT {{BASE_URL}}/api/authors/638e7f5ac61f8b6b0dabee63
+PUT {{BASE_URL}}/api/authors/{{AUTHOR_ID}}
 content-type: application/json
 
 {
