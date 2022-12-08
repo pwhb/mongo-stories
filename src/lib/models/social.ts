@@ -1,12 +1,20 @@
-import { Schema, model } from "mongoose";
+class Social {
+    placement: number
+    url: string
+    icon: string
+    name: string
 
-const socialSchema: Schema = new Schema({
-    placement: { type: Number },
-    url: { type: String },
-    icon: { type: String },
-    name: { type: String },
-})
-
-const Social = model("Social", socialSchema)
+    constructor({ placement, url, icon, name }: {
+    placement: number,
+    url: string,
+    icon: string,
+    name: string,
+    }) {
+        this.placement = placement;
+        this.url = url;
+        this.icon = icon;
+        this.name = name; 
+    }
+}
 
 export default Social

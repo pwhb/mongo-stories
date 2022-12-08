@@ -1,59 +1,30 @@
-import { slugify } from "$lib/utils/slugify"
-
-type NovelParams = {
-    firstName: string
-    lastName: string
-    penName: string
-    intro?: string
-    bio?: string
-    image?: string
-    thumbnail?: string
-}
+import type { ObjectId } from "mongodb"
 
 class Novel {
-    firstName: string
-    lastName: string
-    penName: string
-    intro?: string
-    bio?: string
+    title: string
     slug: string
-    image?: string
-    thumbnail?: string
+    coverImage: string
+    pdfUrl: string
+    song: ObjectId
+    author: ObjectId
 
-    constructor({ firstName, lastName, penName, intro, bio, image, thumbnail }: NovelParams) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.penName = penName;
-        this.intro = intro;
-        this.bio = bio;
-        const fullName = firstName + " " + lastName
-        this.slug = slugify(fullName)
-        this.image = image
-        this.thumbnail = thumbnail 
-
+    constructor({ title, slug, coverImage, pdfUrl, song, author }: {
+        title: string,
+        slug: string,
+        coverImage: string,
+        pdfUrl: string,
+        song: ObjectId,
+        author: ObjectId
+    }) {
+        this.title = title;
+        this.slug = slug;
+        this.coverImage = coverImage;
+        this.pdfUrl = pdfUrl;
+        this.song = song;
+        this.author = author 
     }
 }
 
 export default Novel
 
 
-// import { Schema, model } from "mongoose";
-
-// const storySchema: Schema = new Schema({
-//     title: { type: String },
-//     slug: { type: String },
-//     coverImage: { type: String },
-//     pdfUrl: { type: String },
-//     song: {
-//         type: Schema.Types.ObjectId,
-//         ref: "Song"
-//     },
-//     author: {
-//         type: Schema.Types.ObjectId,
-//         ref: "Novel"
-//     },
-// })
-
-// const Story = model("Story", storySchema)
-
-// export default Story

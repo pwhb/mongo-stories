@@ -1,13 +1,23 @@
-// import { Schema, model } from "mongoose";
+class Song {
+    thumbnail?: string
+    artist: string
+    title: string
+    youtubeUrl: string
+    audioUrl: string
 
-// const songSchema: Schema = new Schema({
-//     thumbnail: { type: String },
-//     artist: { type: String },
-//     title: { type: String },
-//     youtubeUrl: { type: String },
-//     audioUrl: { type: String }
-// })
+    constructor({ thumbnail, artist, title, youtubeUrl, audioUrl }: {
+        thumbnail?: string,
+        artist: string,
+        title: string,
+        youtubeUrl: string,
+        audioUrl: string
+    }) {
+        this.thumbnail = thumbnail;
+        this.artist = artist;
+        this.title = title;
+        this.youtubeUrl = youtubeUrl;
+        this.audioUrl = audioUrl;
+    }
+}
 
-// const Song = model("Song", songSchema)
-
-// export default Song
+export default Song

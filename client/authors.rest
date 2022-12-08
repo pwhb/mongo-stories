@@ -1,6 +1,6 @@
 @BASE_URL=http://[::1]:5173
 
-@AUTHOR_ID=638e7f5ac61f8b6b0dabee63
+@AUTHOR_ID=639168cca9e7672f6c36c486
 
 ###
 GET {{BASE_URL}}/api/authors
@@ -17,7 +17,7 @@ content-type: application/json
     "firstName": "Phone",
     "lastName": "Waiyam Hein",
     "penName": "broccoli",
-    "intro": "songs and stawberries",
+    "intro": "love and art",
     "bio": "art, love, maths and freedom",
     "slug": "",
     "image": "",
