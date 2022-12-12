@@ -1,43 +1,73 @@
-// import { Schema, model } from "mongoose";
+import { slugify } from '$lib/utils/slugify';
+import type { ObjectId } from 'mongodb';
 
-// export enum PieceType {
-//     POEM,
-//     STORY,
-//     CHAPTER,
-//     NON_FICTION,
-//     JOKE,
-//     MISC
-// }
+export enum PieceType {
+	POEM,
+	STORY,
+	CHAPTER,
+	NON_FICTION,
+	JOKE,
+	MISC
+}
 
-// const pieceSchema: Schema = new Schema({
-//     title: { type: String },
-//     subtitle: { type: String },
-//     slug: { type: String },
-//     tag: { type: [String], default: [] },
-//     finishedDate: { type: Date },
-//     backgroundImage: { type: String },
-//     heroImage: { type: String },
-//     thumbnail: { type: String },
-//     imageAlbum: {
-//         type: [String],
-//         default: []
-//     },
-//     type: {
-//         type: String,
-//     },
-//     song: {
-//         type: Schema.Types.ObjectId,
-//         ref: "Song"
-//     },
-//     author: {
-//         type: Schema.Types.ObjectId,
-//         ref: "Author"
-//     },
-//     body: {
-//         type: String
-//     }
-// }, { timestamps: true })
 
-// const Piece = model("Piece", pieceSchema)
 
-// export default Piece
+class Piece {
+	title: string;
+	subtitle?: string;
+	slug: string;
+	tag: string[];
+	finishedDate: Date;
+	backgroundImage?: string;
+	heroImage?: string;
+	thumbnail?: string;
+	imageAlbum: string[];
+	type: string;
+	song?: ObjectId;
+	author: ObjectId;
+	body: string;
+
+	constructor({
+		title,
+		subtitle,
+		tag,
+		finishedDate,
+		backgroundImage,
+		heroImage,
+		thumbnail,
+		imageAlbum,
+		type,
+		song,
+		author,
+		body
+	}: {
+		title: string;
+		subtitle?: string;
+		tag: string[];
+		finishedDate: Date;
+		backgroundImage?: string;
+		heroImage?: string;
+		thumbnail?: string;
+		imageAlbum: string[];
+		type: string;
+		song?: ObjectId;
+		author: ObjectId;
+		body: string;
+	}) {
+		this.title = title;
+		this.subtitle = subtitle;
+		this.tag = tag;
+		this.finishedDate = finishedDate;
+		this.backgroundImage = backgroundImage;
+		this.slug = slugify(title);
+		this.heroImage = heroImage;
+		this.imageAlbum = imageAlbum;
+		this.type = type;
+		this.song = song;
+		this.author = author;
+		this.body = body;
+		this.thumbnail = thumbnail;
+	}
+}
+
+export default Piece;
