@@ -20,7 +20,7 @@
 		</div>
 	</div>
 	<div>
-		<p class="lowercase">{footer.title}</p>
-		<p class="lowercase">{footer.subtitle}</p>
+		<p>{footer.title}</p>
+		<p>{footer.subtitle}</p>
 	</div>
 </footer>

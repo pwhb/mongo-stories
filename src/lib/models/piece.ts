@@ -16,7 +16,7 @@ class Piece {
 	title: string;
 	subtitle?: string;
 	slug: string;
-	tag: string[];
+	tags: string[];
 	finishedDate: Date;
 	backgroundImage?: string;
 	heroImage?: string;
@@ -30,7 +30,7 @@ class Piece {
 	constructor({
 		title,
 		subtitle,
-		tag,
+		tags,
 		finishedDate,
 		backgroundImage,
 		heroImage,
@@ -43,7 +43,7 @@ class Piece {
 	}: {
 		title: string;
 		subtitle?: string;
-		tag: string[];
+		tags: string[];
 		finishedDate: Date;
 		backgroundImage?: string;
 		heroImage?: string;
@@ -56,7 +56,7 @@ class Piece {
 	}) {
 		this.title = title;
 		this.subtitle = subtitle;
-		this.tag = tag;
+		this.tags = tags;
 		this.finishedDate = finishedDate;
 		this.backgroundImage = backgroundImage;
 		this.slug = slugify(title);

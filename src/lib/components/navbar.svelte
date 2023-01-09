@@ -48,7 +48,7 @@
 		</div>
 	</div>
 	<div class="navbar-center">
-		<a class="normal-case text-xl" href="/">{title}</a>
+		<a class="text-xl" href="/">{title}</a>
 	</div>
 	<div class="navbar-end">
 		{#if $showSearch}
