@@ -5,7 +5,7 @@
 	const types = parseEnum(PieceType);
 </script>
 
-<div class="form-control mx-5 md:mx-auto max-w-80%">
+<div class="form-control max-w-lg mx-auto">
 	<label class="label" for="title">
 		<span class="label-text">Title</span>
 	</label>
@@ -29,16 +29,18 @@
 	</select>
 </div>
 
-<div class="">
-	<div class="flex justify-self-stretch bg-slate-400">
+<div class="flex flex-wrap sm:flex-row-reverse items-stretch h-screen">
+	<div class="w-full md:w-1/2 bg-cover flex">left</div>
+	<div class="w-full flex-1 bg-blue-lightest p-4">
 		<div class="form-control">
 			<label class="label" for="body">
 				<span class="label-text">Body</span>
 			</label>
-			<textarea class="textarea textarea-bordered h-96" placeholder="Type here" id="body" />
+			<textarea
+				class="textarea textarea-bordered h-96 overflow-y-scroll"
+				placeholder="Type here"
+				id="body"
+			/>
 		</div>
-	</div>
-	<div class="flex justify-self-stretch bg-red-400">
-		<p>hello</p>
 	</div>
 </div>
