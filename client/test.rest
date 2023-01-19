@@ -1,0 +1,54 @@
+@local_url=http://[::1]:5173
+
+@AUTHOR_ID=639168cca9e7672f6c36c486
+
+###
+POST {{local_url}}/api/test
+Content-Type: application/json
+
+{
+    "title":"hello",
+    "artist":"dolores"
+}
+
+###
+POST {{local_url}}/api/upload
+Content-Type: application/json
+
+{
+    "title":"hello",
+    "artist":"dolores"
+}
+
+###
+GET {{local_url}}/api/authors/{{AUTHOR_ID}}
+
+###
+POST {{local_url}}/api/authors
+content-type: application/json
+
+{
+    "firstName": "Phone",
+    "lastName": "Waiyam Hein",
+    "penName": "broccoli",
+    "intro": "love and art",
+    "bio": "art, love, maths and freedom",
+    "slug": "",
+    "image": "",
+    "thumbnail": ""
+}
+
+###
+PUT {{local_url}}/api/authors/{{AUTHOR_ID}}
+content-type: application/json
+
+{
+    "firstName": "Phone",
+    "lastName": "Waiyam Hein",
+    "penName": "broccoli",
+    "intro": "songs and stawberries",
+    "bio": "art, love, maths and freedom",
+    "slug": "broccoli",
+    "image": "",
+    "thumbnail": ""
+}

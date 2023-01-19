@@ -1,23 +1,12 @@
-class Song {
-    thumbnail?: string
-    artist: string
-    title: string
-    youtubeUrl: string
-    audioUrl: string
+import type { ObjectId } from 'mongodb';
 
-    constructor({ thumbnail, artist, title, youtubeUrl, audioUrl }: {
-        thumbnail?: string,
-        artist: string,
-        title: string,
-        youtubeUrl: string,
-        audioUrl: string
-    }) {
-        this.thumbnail = thumbnail;
-        this.artist = artist;
-        this.title = title;
-        this.youtubeUrl = youtubeUrl;
-        this.audioUrl = audioUrl;
-    }
+export default class Song {
+	constructor(
+		public title: string,
+		public artist: string,
+		public imageUrl: string,
+        public audioUrl: string,
+		public youtubeUrl?: string,
+		public id?: ObjectId
+	) {}
 }
-
-export default Song

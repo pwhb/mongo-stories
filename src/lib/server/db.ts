@@ -9,8 +9,6 @@ export const getMongoClient = async () => {
         _mongoClient = new MongoClient(MONGODB_URI)
         try {
             await _mongoClient.connect()
-            console.log(MONGODB_URI)
-            console.log(MONGODB_DATABASE)
             console.log("DB connected")
         } catch (err) {
             console.log(err)
