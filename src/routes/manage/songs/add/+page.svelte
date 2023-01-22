@@ -31,18 +31,4 @@
 	</select>
 </div>
 
-<div class="flex flex-wrap sm:flex-row-reverse items-stretch h-screen">
-	<div class="w-full md:w-1/2 bg-cover flex">left</div>
-	<div class="w-full flex-1 bg-blue-lightest p-4">
-		<div class="form-control">
-			<label class="label" for="body">
-				<span class="label-text">Body</span>
-			</label>
-			<textarea
-				class="textarea textarea-bordered h-96 overflow-y-scroll"
-				placeholder="Type here"
-				id="body"
-			/>
-		</div>
-	</div>
-</div>
+
