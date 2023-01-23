@@ -3,6 +3,11 @@
 @AUTHOR_ID=639168cca9e7672f6c36c486
 
 ###
+GET {{local_url}}/api/test
+
+
+
+###
 POST {{local_url}}/api/test
 Content-Type: application/json
 

@@ -1,31 +1,8 @@
 <script>
-	import { each } from 'svelte/internal';
+	import { getContext } from 'svelte';
+	const { context } = getContext('appContext');
 
-	const menu = [
-		{
-			title: 'Songs',
-			submenu: [
-				{
-					url: 'songs',
-					name: 'songs'
-				},
-				{
-					url: 'songs/add',
-					name: 'add'
-				}
-			]
-		},
-		{
-			title: 'Stories',
-			submenu: [
-				{
-					url: 'songs/add',
-					name: 'home'
-				}
-			]
-		}
-	];
-	console.log(menu)
+	const menu = context.managePage;
 </script>
 
 <div class="hero min-h-[70vh]">

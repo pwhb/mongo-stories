@@ -1,0 +1,38 @@
+@BASE_URL=http://localhost:5173
+
+@AUTHOR_ID=639168cca9e7672f6c36c486
+
+###
+GET {{BASE_URL}}/api/songs
+
+
+###
+GET {{BASE_URL}}/api/songs
+
+###
+POST {{BASE_URL}}/api/songs
+content-type: application/json
+
+{
+	"title": "Living On My Own",
+	"artist": "Freddie Mercury",
+	"audioUrl": "https://github.com/pwhb/public/blob/main/music/Freddie%20Mercury%20-%20Living%20On%20My%20Own%20(1993%20Remix%20Remastered)-HTdd8QxifbY.webm?raw=true",
+	"imageUrl": "",
+	"youtubeUrl": "https://youtu.be/HTdd8QxifbY"
+}
+
+
+###
+PUT {{BASE_URL}}/api/songs/
+content-type: application/json
+
+{
+    "firstName": "Phone",
+    "lastName": "Waiyam Hein",
+    "penName": "broccoli",
+    "intro": "songs and stawberries",
+    "bio": "art, love, maths and freedom",
+    "slug": "broccoli",
+    "image": "",
+    "thumbnail": ""
+}

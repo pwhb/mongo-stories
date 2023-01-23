@@ -1,8 +1,7 @@
 <script>
 	import { page } from '$app/stores';
 
-	// @ts-nocheck
-
+	// @ts-ignore
 	import Dropzone from 'svelte-file-dropzone';
 
 	let files = {
@@ -15,6 +14,9 @@
 	 */
 	let file;
 
+	/**
+	 * @param {{ detail: { acceptedFiles: any; fileRejections: any; }; }} e
+	 */
 	async function handleFilesSelect(e) {
 		const { acceptedFiles, fileRejections } = e.detail;
 

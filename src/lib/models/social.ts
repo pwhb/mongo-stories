@@ -1,20 +1,11 @@
-class Social {
-    placement: number
-    url: string
-    icon: string
-    name: string
+import type { ObjectId } from 'mongodb';
 
-    constructor({ placement, url, icon, name }: {
-    placement: number,
-    url: string,
-    icon: string,
-    name: string,
-    }) {
-        this.placement = placement;
-        this.url = url;
-        this.icon = icon;
-        this.name = name; 
-    }
+export default class Social {
+	constructor(
+		public placement: number,
+		public url: string,
+		public icon: string,
+		public name: string,
+		public _id?: ObjectId
+	) {}
 }
-
-export default Social

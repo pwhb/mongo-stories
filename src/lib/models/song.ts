@@ -7,6 +7,6 @@ export default class Song {
         public audioUrl: string,
 		public imageUrl?: string,
 		public youtubeUrl?: string,
-		public id?: ObjectId
+		public _id?: ObjectId
 	) {}
 }

@@ -1,6 +1,7 @@
-@BASE_URL=http://[::1]:5173
+# @BASE_URL=http://[::1]:5173
+@BASE_URL=http://localhost:5173
 
-@AUTHOR_ID=639168cca9e7672f6c36c486
+@AUTHOR_ID=63ce5059abeec0b8a657e76b
 
 ###
 GET {{BASE_URL}}/api/authors
@@ -14,11 +15,11 @@ POST {{BASE_URL}}/api/authors
 content-type: application/json
 
 {
-    "firstName": "Phone",
-    "lastName": "Waiyam Hein",
-    "penName": "broccoli",
-    "intro": "love and art",
-    "bio": "art, love, maths and freedom",
+    "firstName": "Aung Phone",
+    "lastName": "Maw",
+    "penName": "apm",
+    "intro": "hegalian",
+    "bio": "fucked up shitpost",
     "slug": "",
     "image": "",
     "thumbnail": ""
@@ -29,12 +30,6 @@ PUT {{BASE_URL}}/api/authors/{{AUTHOR_ID}}
 content-type: application/json
 
 {
-    "firstName": "Phone",
-    "lastName": "Waiyam Hein",
-    "penName": "broccoli",
-    "intro": "songs and stawberries",
-    "bio": "art, love, maths and freedom",
-    "slug": "broccoli",
-    "image": "",
-    "thumbnail": ""
+    "firstName": "Ludwig",
+    "lastName": "Yool"
 }
