@@ -18,7 +18,16 @@ export const GET: RequestHandler = async ({ params }) => {
 
 export const PUT: RequestHandler = async ({ request, params }) => {
 	try {
-		const keys = ['firstName', 'lastName', 'penName', 'intro', 'bio', 'image', 'thumbnail'];
+		const keys = [
+			'firstName',
+			'lastName',
+			'penName',
+			'intro',
+			'bio',
+			'image',
+			'thumbnail',
+			'socials'
+		];
 		const body = await request.json();
 		const slug = slugify(body.firstName + ' ' + body.lastName);
 		const update: any = { slug };

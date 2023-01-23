@@ -1,4 +1,6 @@
-@BASE_URL=http://[::1]:5173
+# @BASE_URL=http://[::1]:5173
+
+@BASE_URL=http://localhost:5173
 @SOCIAL_ID=
 
 ###
