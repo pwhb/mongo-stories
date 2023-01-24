@@ -20,9 +20,9 @@ export default class Post {
 		public body: string,
 		public tags?: string[],
 		public imageAlbum?: string[],
-		public backgroundImagepublic?: string,
-		public heroImagepublic?: string,
-		public thumbnailpublic?: string,
+		public backgroundImage?: string,
+		public heroImage?: string,
+		public thumbnail?: string,
 		public subtitle?: string,
 		public song?: ObjectId,
 	) {

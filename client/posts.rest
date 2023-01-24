@@ -1,0 +1,36 @@
+# @BASE_URL=http://[::1]:5173
+
+@BASE_URL=http://localhost:5173
+@SOCIAL_ID=
+
+###
+GET {{BASE_URL}}/api/socials
+
+
+###
+GET {{BASE_URL}}/api/socials/{{SOCIAL_ID}}
+
+###
+POST {{BASE_URL}}/api/socials
+content-type: application/json
+
+{
+    "placement": 2,
+    "url": "https://lichess.org/@/broccolipwh",
+    "icon": "https://www.svgrepo.com/show/330838/lichess.svg",
+    "name": "lichess"
+}
+
+
+
+
+###
+PUT {{BASE_URL}}/api/socials/{{SOCIAL_ID}}
+content-type: application/json
+
+{
+    "placement": "0",
+    "url": "https://goodreads.com/pwhb",
+    "icon": "https://www.svgrepo.com/show/349384/goodreads.svg",
+    "name": "goodreads"
+}
