@@ -1,4 +1,5 @@
 export const AUTHOR_COLLECTION = "authors"
+export const USER_COLLECTION = "users"
 export const SOCIAL_COLLECTION = "socials"
 export const SONG_COLLECTION = "songs"
 export const POST_COLLECTION = "posts"

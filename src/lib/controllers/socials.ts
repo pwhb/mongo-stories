@@ -1,8 +1,8 @@
-import { getDB } from '$lib/server/db';
-import { SOCIAL_COLLECTION } from '$lib/utils/constants';
+import social from '$lib/models/social';
+import dbConnect from '$lib/server/connectDB';
 
 export const getSocials = async () => {
-	const db = await getDB();
-	const socials = await db.collection(SOCIAL_COLLECTION).find({}).toArray();
-	return socials;
+	await dbConnect();
+	const docs = await social.find().lean();
+	return docs;
 };

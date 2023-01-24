@@ -1,11 +1,8 @@
-import { getDB } from '$lib/server/db';
-
-import { ObjectId } from 'mongodb';
-import { CONTEXT_ID } from '$env/static/private';
-import { CONTEXT_COLLECTION } from '$lib/utils/constants';
+import dbConnect from '$lib/server/connectDB';
+import context from '$lib/models/context';
 
 export const getContext = async () => {
-	const db = await getDB();
-	const context = await db.collection(CONTEXT_COLLECTION).findOne({ _id: new ObjectId(CONTEXT_ID) });
-	return context;
+	await dbConnect();
+	const doc = await context.findOne({ name: 'default' });
+	return doc;
 };

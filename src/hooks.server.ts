@@ -1,13 +1,24 @@
+import user from '$lib/models/user';
+import dbConnect from '$lib/server/connectDB';
+import type { Handle } from '@sveltejs/kit';
 
-import { getSocials } from "$lib/controllers/socials";
-import type { Handle } from "@sveltejs/kit";
+export const handle: Handle = async ({ event, resolve }) => {
+	const token = event.cookies.get('token');
+	if (!token) {
+		return await resolve(event);
+	}
+	try {
+		await dbConnect();
+		const loggedInUser = await user
+			.findOne({ token })
+			.select({ _id: 0, username: 1, role: 1, avatar: 1 })
+			.lean();
+		console.log(loggedInUser);
 
+		event.locals.user = loggedInUser;
+	} catch (err) {
+		console.error(err);
+	}
 
-export const handle:Handle = async ({ event, resolve }) => {
-    // if (event.url.pathname.startsWith('/custom')) {
-    //   return new Response('custom response');
-    // }
-    
-    const response = await resolve(event);
-    return response;
-  }
+	return await resolve(event);
+};
