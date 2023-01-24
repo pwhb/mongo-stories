@@ -3,7 +3,7 @@ import { getDB } from '$lib/server/db';
 import { SOCIAL_COLLECTION } from '$lib/utils/constants';
 import { json, type RequestHandler } from '@sveltejs/kit';
 
-export const GET: RequestHandler = async ({}) => {
+export const GET: RequestHandler = async () => {
 	const db = await getDB();
 	const socials = await db.collection(SOCIAL_COLLECTION).find().toArray();
 	return json({ message: 'success', data: socials }, { status: 200 });

@@ -10,64 +10,24 @@ export enum PieceType {
 	MISC
 }
 
-
-
-class Piece {
-	title: string;
-	subtitle?: string;
-	slug: string;
-	tags: string[];
-	finishedDate: Date;
-	backgroundImage?: string;
-	heroImage?: string;
-	thumbnail?: string;
-	imageAlbum: string[];
-	type: string;
-	song?: ObjectId;
-	author: ObjectId;
-	body: string;
-
-	constructor({
-		title,
-		subtitle,
-		tags,
-		finishedDate,
-		backgroundImage,
-		heroImage,
-		thumbnail,
-		imageAlbum,
-		type,
-		song,
-		author,
-		body
-	}: {
-		title: string;
-		subtitle?: string;
-		tags: string[];
-		finishedDate: Date;
-		backgroundImage?: string;
-		heroImage?: string;
-		thumbnail?: string;
-		imageAlbum: string[];
-		type: string;
-		song?: ObjectId;
-		author: ObjectId;
-		body: string;
-	}) {
-		this.title = title;
-		this.subtitle = subtitle;
-		this.tags = tags;
-		this.finishedDate = finishedDate;
-		this.backgroundImage = backgroundImage;
+export default class Post {
+	public slug: string
+	constructor(
+		public title: string,
+		public finishedDate: Date,
+		public type: string,
+		public author: ObjectId,
+		public body: string,
+		public tags?: string[],
+		public imageAlbum?: string[],
+		public backgroundImagepublic?: string,
+		public heroImagepublic?: string,
+		public thumbnailpublic?: string,
+		public subtitle?: string,
+		public song?: ObjectId,
+	) {
 		this.slug = slugify(title);
-		this.heroImage = heroImage;
-		this.imageAlbum = imageAlbum;
-		this.type = type;
-		this.song = song;
-		this.author = author;
-		this.body = body;
-		this.thumbnail = thumbnail;
 	}
 }
 
-export default Piece;
+
