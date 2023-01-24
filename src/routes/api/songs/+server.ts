@@ -8,6 +8,8 @@ export const POST: RequestHandler = async ({ request }) => {
 	try {
 		const { title, artist, audioUrl, imageUrl, youtubeUrl } = await request.json();
 		const song = new Song(title, artist, audioUrl, imageUrl, youtubeUrl);
+		const keys = Object.keys(song)
+		console.log(keys)
 		const db = await getDB();
 		await db.collection(SONG_COLLECTION).insertOne(song);
 
@@ -18,7 +20,7 @@ export const POST: RequestHandler = async ({ request }) => {
 	}
 };
 
-export const GET: RequestHandler = async ({}) => {
+export const GET: RequestHandler = async () => {
 	try {
 		const db = await getDB();
 		const songs = await db.collection(SONG_COLLECTION).find().toArray();
